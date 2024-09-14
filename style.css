@@ -1,0 +1,263 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Faz o corpo ocupar toda a altura da página */
+}
+
+header {
+    background-color: #f4e4a3;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative; /* Necessário para o posicionamento absoluto da imagem */
+    overflow: hidden; /* Garante que a imagem não expanda o cabeçalho */
+    height: 100px; /* Altura do cabeçalho, não deve aumentar com a imagem */
+}
+
+header img {
+    height: 370px; /* Ajuste a altura da imagem conforme necessário */
+    width: auto;  /* Mantém a proporção da imagem */
+    position: absolute; /* Permite que a imagem não afete o layout do cabeçalho */
+    top: 50%; /* Centraliza verticalmente a imagem */
+    transform: translateY(-50%); /* Ajusta a imagem para ficar centralizada verticalmente */
+    z-index: 10; /* Garante que a imagem esteja sobre o conteúdo principal */
+}
+
+header .search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px; /* Adiciona espaço nas laterais */
+    position: relative; 
+}
+
+header .search-bar input {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2); /* Sombra apenas na parte inferior */
+}
+
+header button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+nav {
+    padding: 10px;
+    text-align: right;
+}
+
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.main-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Empilha os filhos verticalmente */
+    flex: 1; /* Faz o conteúdo principal ocupar o espaço disponível */
+}
+
+.section-title {
+    margin-bottom: 50px; /* Espaço abaixo do título */
+    text-align: center; /* Centraliza o título */
+    font-size: 2rem; /* Tamanho padrão da fonte */
+    font-weight: bold; /* Torna o texto em negrito */
+    transform: scale(1.2); /* Aumenta a aparência do texto em 20% */
+    transform-origin: center; /* Garante que o texto aumenta a partir do centro */
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px; /* Espaço entre as seções */
+    margin-bottom: 20px; /* Espaço abaixo das seções para separar da paginação */
+}
+
+.news-section {
+    flex: 1; /* Ocupa metade do espaço disponível */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os cards */
+    max-width: 50%; /* Ajusta a largura para 50% */
+}
+
+.news-card {
+    background-color: #f4c5c5;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Faz com que o card ocupe toda a largura do contêiner pai */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura total */
+}
+
+.news-card h2 {
+    font-size: 1.5em;
+}
+
+.news-card p {
+    font-size: 1em;
+    color: #333;
+}
+
+.highlight-section {
+    display: flex;
+    flex-direction: row; /* Alinha os itens lado a lado */
+    gap: 20px; /* Espaço entre os itens */
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
+    max-width: 50%; /* Garante que o container não ultrapasse a largura do pai */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column; /* Alinha a imagem e o texto verticalmente */
+    flex: 1; /* Faz com que cada item ocupe uma proporção igual do espaço disponível */
+    max-width: calc(50% - 20px); /* Limita a largura máxima a 50% menos o gap */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-item img {
+    width: 100%; /* Ajusta a imagem para a largura do item */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Faz com que a imagem cubra a área sem distorcer */
+}
+
+.highlight-text {
+    padding: 10px; /* Adiciona algum espaço ao redor do texto */
+}
+
+
+
+/* Estilos do rodapé */
+footer {
+    background-color: #d10000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Faz o rodapé ir para o final da página */
+}
+
+
+
+
+/* Media Queries */
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    header {
+        height: auto; /* Permite que o cabeçalho ajuste a altura com base no conteúdo */
+        padding: 10px; /* Ajusta o padding para se adequar melhor aos dispositivos móveis */
+    }
+
+    header img {
+        height: auto; /* Ajusta a altura da imagem para manter a proporção */
+        width: 100%;  /* Ajusta a largura da imagem para 100% do cabeçalho */
+        top: 0; /* Remove o alinhamento vertical central */
+        transform: none; /* Remove a transformação */
+    }
+
+    .search-bar {
+        margin: 0; /* Remove a margem lateral */
+    }
+
+    .search-bar input {
+        width: 100%; /* Faz o input ocupar toda a largura disponível */
+        max-width: none; /* Remove a largura máxima para se ajustar melhor */
+    }
+
+    nav {
+        text-align: center; /* Centraliza a navegação para telas pequenas */
+        padding: 10px; /* Ajusta o padding para se adequar aos dispositivos móveis */
+    }
+
+    nav a {
+        display: block; /* Exibe cada link em uma linha separada */
+        margin: 10px 0; /* Espaço entre os links */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte para telas menores */
+        transform: none; /* Remove a transformação para não afetar o layout */
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Alinha as seções verticalmente */
+    }
+
+    .news-section, .highlight-section {
+        max-width: 100%; /* Ajusta a largura máxima para 100% */
+        flex: 1 1 100%; /* Faz com que cada seção ocupe toda a largura disponível */
+    }
+
+    .news-card {
+        width: 100%; /* Faz o card ocupar toda a largura do contêiner pai */
+        padding: 10px; /* Ajusta o padding para se adequar aos dispositivos móveis */
+    }
+}
+
+/* Medium devices (tablets, 600px to 992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+    header img {
+        height: auto; /* Ajusta a altura da imagem para manter a proporção */
+        width: 100%; /* Ajusta a largura da imagem para 100% do cabeçalho */
+    }
+
+    .search-bar input {
+        width: 100%; /* Faz o input ocupar toda a largura disponível */
+    }
+
+    .section-title {
+        font-size: 1.75rem; /* Ajusta o tamanho da fonte para tablets */
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Alinha as seções verticalmente em tablets */
+    }
+
+    .news-section, .highlight-section {
+        max-width: 100%; /* Ajusta a largura máxima para 100% */
+    }
+
+    .news-card {
+        width: 100%; /* Faz o card ocupar toda a largura do contêiner pai */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 993px) {
+    .search-bar {
+        margin: 0 20px; /* Adiciona espaço lateral novamente */
+    }
+
+    nav {
+        text-align: right; /* Alinha a navegação à direita para desktops */
+    }
+
+    .section-title {
+        font-size: 2rem; /* Tamanho padrão da fonte para desktops */
+    }
+
+    .content-wrapper {
+        flex-direction: row; /* Alinha as seções horizontalmente */
+    }
+
+    .news-section, .highlight-section {
+        max-width: 50%; /* Ajusta a largura máxima para 50% */
+    }
+}

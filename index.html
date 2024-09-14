@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://vlibras.gov.br/app/vlibras-plugin.css">
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+</head>
+<body>
+    <header>
+        <img src="/imagens/LogoAcessivel.png" alt="Logo do Site sobre Acessibilidade na Web">
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquise aqui..." aria-label="Pesquisar">
+        </div>
+        <button aria-label="Login">Login</button>
+    </header>
+    
+    <nav>
+        <a href="#">Início</a> |
+        <a href="#">Equipe</a> |
+        <a href="#">Publicações</a> |
+        <a href="#">Eventos</a> |
+        <a href="#">Contato</a>
+    </nav>
+
+    <div class="main-content">
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper">
+                    <!-- Botões de zoom adicionados aqui -->
+                    <div class="zoom-controls">
+                        <button class="zoom-button" id="zoom-in">+</button>
+                        <button class="zoom-button" id="zoom-out">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h1 class="section-title large-title">Notícias da Semana</h1>
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="news-section">
+                <div class="news-card">
+                    <h2>IFRN Enhances Web Accessibility for All Users</h2>
+                    <p>August 19, 2024 – [City] – In a groundbreaking move towards digital inclusivity, [Your Site Name] has announced a major overhaul of its website to improve accessibility for all users.</p>
+                    <a href="#">ler mais</a>
+                </div>
+                <div class="news-card">
+                    <h2>Accessibility Feedback Encouraged by Teacher Tatiana Sorrentino at the Federal Institute of Rio Grande do Norte - IFRN</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim magna nec arcu euismod.</p>
+                    <a href="#">ler mais</a>
+                </div>
+                <div class="news-card">
+                    <h3>Uma Breve Discussão sobre Acessibilidade na Web</h3>
+                    <p>Autora: Tatiana Amaral Sorrentino</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim magna nec arcu euismod.</p>
+                    <a href="#">ler mais</a>
+                </div>
+            </div>
+            
+            <div class="highlight-section">
+                <div class="highlight-item">
+                    <img src="imagens/semanaP.png" alt="Semana Pedagógica">
+                    <div class="highlight-text">
+                        <h2>Semana pedagógica do IFRN</h2>
+                        <p>Semana Pedagógica inicia discutindo acessibilidade.</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <img src="imagens/acessibilidade-web.jpg" alt="Site acessível">
+                    <div class="highlight-text">
+                        <h2>Maneiras de tornar seu site acessível</h2>
+                        <p>Como otimizar seu site para usuários com deficiência</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Todos os direitos reservados.</p>
+    </footer>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+</html>
